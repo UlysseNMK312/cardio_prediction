@@ -28,5 +28,10 @@ data.dtypes
 # statistics descriptive
 data.describe()
 
+# DATA CLEANING
+
+# fixe issues in data
+# check for NaN
+data.isnull().sum()
 
 
