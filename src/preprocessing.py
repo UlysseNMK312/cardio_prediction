@@ -11,7 +11,22 @@ import seaborn as sns
 data =  pd.read_excel("C:\\Users\\Ulysse K\\cardio prediction\\data\\raw\\cardio.xlsx")
 data.head()
 
-# Basic information
+# BASIC INFORMATION
+
+# data information
+data.info()
+
+# dimension du dataset
+data.shape
+
+# columns names ( variables)
+data.columns.unique()
+
+# data types
+data.dtypes
+
+# statistics descriptive
+data.describe()
 
 
 
