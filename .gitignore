@@ -1,0 +1,22 @@
+# Environnement Python
+.venv/
+venv/
+
+# Fichiers Python temporaires
+__pycache__/
+*.py[cod]
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Secrets et configuration locale
+.env
+
+# Résultats et modèles générés
+models/
+outputs/
+reports/figures/
+
+# Données : à adapter selon leur taille et leur confidentialité
+data/raw/
+data/processed/
