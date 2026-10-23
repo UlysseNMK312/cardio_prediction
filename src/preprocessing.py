@@ -34,4 +34,7 @@ data.describe()
 # check for NaN
 data.isnull().sum()
 
+# check for duplicate values
+data.duplicated().sum()
+
 
