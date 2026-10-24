@@ -37,4 +37,9 @@ data.isnull().sum()
 # check for duplicate values
 data.duplicated().sum()
 
+# checking for value counts of age height and weight var
+
+data['age'].value_counts().unique
+data['height'].value_counts().unique
+data['weight'].value_counts().unique
 
