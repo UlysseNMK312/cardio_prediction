@@ -31,3 +31,32 @@ target = df['cardio']
 
 X_train, X_test, y_train, y_test = train_test_split(features, target, train_size=0.2, random_state=42)
 
+
+# Dictonnary hyperparams
+
+model_params = {
+    'Logistic_Regression' : {
+        'model' : LogisticRegression(),
+        'params' : {}
+    },
+
+    'Decision_Tree_Classifier' : {
+        'model' : DecisionTreeClassifier(),
+        'params' : {
+            'max_depth' : [2,4,6,8,10],
+            'random_state': [0, 42],
+            'min_samples_split': [1, 5, 10, 20]
+
+
+        }
+    },
+
+    'Random_Forest_Classifier' : {
+        'model' : RandomForestClassifier(),
+        'params' : {
+            'n_estimators' : [10, 20, 30, 50, 80]
+        }
+    }
+}
+
+
