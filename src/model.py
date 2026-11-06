@@ -74,3 +74,9 @@ for model_name, m in model_params.items():
 
 pd.DataFrame(score)
 print(score)
+
+# best model
+s = pd.DataFrame(score)
+sort = s.sort_values(by= 'MSE(-ve)', ascending=False)
+print(sort)
+
