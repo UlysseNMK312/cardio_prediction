@@ -120,3 +120,19 @@ print(y_pred_lc)
 print("Mean Squared Error : ", mean_squared_error(y_test, y_pred_lc))
 print("Mean Absolute Error : ", mean_absolute_error(y_test, y_pred_lc))
 
+# Diagramme de barre importances des caracteristiques Random Forest
+feature_importance = rfr.feature_importances_
+features_names = list(X_train.columns)
+
+sorted_indices = np.argsort(feature_importance)[::-1]
+sorted_feature_importance = [feature_importance[i] for i in sorted_indices]
+sorted_feature_names = [features_names[i] for i in sorted_indices]
+
+
+plt.figure(figsize=(12, 8))
+plt.barh(sorted_feature_names[:10], sorted_feature_importance[:10])
+plt.xlabel("Features Importance")
+plt.title('Top 10 Feature importance in predicting Cardio')
+plt.gca().invert_yaxis()
+
+plt.show()
