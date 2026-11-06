@@ -7,3 +7,11 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
+# Bibliotheque pour le Machine Learning
+
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+
