@@ -108,3 +108,12 @@ print(y_pred_dtr)
 print("Mean Squared Error : ", mean_squared_error(y_test, y_pred_dtr))
 print("Mean Absolute Error : ", mean_absolute_error(y_test, y_pred_dtr))
 
+# Logistic classifier Model
+lc = LogisticRegression()
+lc.fit(X_train, y_train)
+
+print(lc.score(X_test, y_test))
+y_pred_lc = lc.predict(X_test)
+print(y_pred_lc)
+
+
