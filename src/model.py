@@ -94,3 +94,13 @@ print(y_pred_rfr)
 print("Mean Squared Error : ", mean_squared_error(y_test, y_pred_rfr))
 print("Mean Absolute Error : ", mean_absolute_error(y_test, y_pred_rfr))
 
+# 2. Decision Tree Model
+print("\n\n== Decision Tree Model ==\n\n")
+
+dtr = DecisionTreeClassifier(max_depth=6, min_samples_split=5, random_state=42)
+dtr.fit(X_train, y_train)
+
+print(dtr.score(X_test, y_test))
+y_pred_dtr = dtr.predict(X_test)
+print(y_pred_dtr)
+
