@@ -23,3 +23,8 @@ data.head()
 
 df = data.copy('deep')
 
+# features extraction
+features = df.drop('cardio', axis=1)
+target = df['cardio']
+
+
