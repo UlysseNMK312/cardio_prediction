@@ -80,3 +80,14 @@ s = pd.DataFrame(score)
 sort = s.sort_values(by= 'MSE(-ve)', ascending=False)
 print(sort)
 
+# 1. Random forest model
+print("=== Random Forest Model ==\n\n")
+rfr = RandomForestClassifier(n_estimators=5 0)
+rfr.fit(X_train, y_train)
+
+print(rfr.score(X_test, y_test))
+y_pred_rfr = rfr.predict(X_test)
+
+print(y_pred_rfr)
+
+
