@@ -82,7 +82,7 @@ print(sort)
 
 # 1. Random forest model
 print("=== Random Forest Model ==\n\n")
-rfr = RandomForestClassifier(n_estimators=5 0)
+rfr = RandomForestClassifier(n_estimators=80)
 rfr.fit(X_train, y_train)
 
 print(rfr.score(X_test, y_test))
@@ -90,4 +90,7 @@ y_pred_rfr = rfr.predict(X_test)
 
 print(y_pred_rfr)
 
+# Metrics
+print("Mean Squared Error : ", mean_squared_error(y_test, y_pred_rfr))
+print("Mean Absolute Error : ", mean_absolute_error(y_test, y_pred_rfr))
 
