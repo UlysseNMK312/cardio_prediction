@@ -24,9 +24,10 @@ data.head()
 df = data.copy('deep')
 
 # features extraction
-features = df.drop('cardio', axis=1)
+features = df.drop(['cardio', 'id'], axis=1)
 target = df['cardio']
 
+print(features.head())
 # train test split
 
 X_train, X_test, y_train, y_test = train_test_split(features, target, train_size=0.2, random_state=42)
