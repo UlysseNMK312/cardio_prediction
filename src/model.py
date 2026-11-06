@@ -59,4 +59,18 @@ model_params = {
     }
 }
 
+# Grid search cv
 
+score = []
+for model_name, m in model_params.items():
+    clf = GridSearchCV(m['model'], m['params'], cv=5, scoring='neg_mean_squared_error')
+    clf.fit(X_train, y_train)
+
+    score.append({
+        'Model': model_name,
+        'Params' : clf.best_params_,
+        'MSE(-ve)': clf.best_score_
+    })
+
+pd.DataFrame(score)
+print(score)
