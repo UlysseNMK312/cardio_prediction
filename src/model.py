@@ -116,4 +116,7 @@ print(lc.score(X_test, y_test))
 y_pred_lc = lc.predict(X_test)
 print(y_pred_lc)
 
+# Metrics
+print("Mean Squared Error : ", mean_squared_error(y_test, y_pred_lc))
+print("Mean Absolute Error : ", mean_absolute_error(y_test, y_pred_lc))
 
