@@ -15,3 +15,11 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 
+
+# Data importation
+
+data =  pd.read_excel("C:\\Users\\Ulysse K\\cardio prediction\\data\\raw\\cardio.xlsx")
+data.head()
+
+df = data.copy('deep')
+
