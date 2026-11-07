@@ -110,6 +110,8 @@ print("Mean Squared Error : ", mean_squared_error(y_test, y_pred_dtr))
 print("Mean Absolute Error : ", mean_absolute_error(y_test, y_pred_dtr))
 
 # Logistic classifier Model
+print("\n\n== Logistic Regression Model ==\n\n")
+
 lc = LogisticRegression()
 lc.fit(X_train, y_train)
 
@@ -136,4 +138,30 @@ plt.xlabel("Features Importance")
 plt.title('Top 10 Feature importance in predicting Cardio')
 plt.gca().invert_yaxis()
 
+plt.show()
+
+# Overfitting and underfitting analysis
+
+print("\n=== Analyse du sur-apprentissage/sous apprentissage ===\n")
+
+# Evaluation de la profondeur de l'arbre sur la performance
+max_depths = range(1,21)
+train_scores_dt = []
+test_scores_dt = []
+
+for depth in max_depths:
+    dt_temp = DecisionTreeClassifier(max_depth=depth, random_state=2)
+    dt_temp.fit(X_train, y_train)
+    train_scores_dt.append(dt_temp.score(X_train, y_train))
+    test_scores_dt.append(dt_temp.score(X_test, y_test))
+
+# Visualisation la performance en fonctoion de la profondeur
+plt.figure(figsize=(10,6))
+plt.plot(max_depths, train_scores_dt, 'b-', label='Score entrainement')
+plt.plot(max_depths, test_scores_dt, 'r-', label='Score test')
+plt.xlabel('Profondeur maximale de l\'arbre')
+plt.ylabel('Precision')
+plt.title('Analyse du sur-apprentissage/sous-apprentissage')
+plt.legend()
+plt.grid()
 plt.show()
