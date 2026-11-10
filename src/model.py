@@ -186,4 +186,33 @@ plt.legend()
 plt.grid()
 plt.show()
 
+# Confusion matrix and classification report
 
+
+cm = confusion_matrix(y_test, y_pred_dtr)
+print("Confusion Matrix:")
+print(cm)
+
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred_dtr))
+
+plt.figure(figsize=(8,6))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['No Cardio', 'Cardio'], yticklabels=['No Cardio', 'Cardio'])
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix')
+plt.show()
+
+# visualisation de la prediction pour l'ensemnble du modele Decision Tree
+
+plt.subplot(1, 1, 1)
+plt.scatter(y_test, y_pred_dtr, alpha=0.5,color='blue', label='Decision Tree')
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', label='Perfect Prediction')
+plt.xlabel('Valeurs réelles')
+plt.ylabel('Valeurs prédites')
+plt.title('Decision Tree')
+plt.grid()
+plt.legend()
+
+plt.tight_layout()
+plt.show()
