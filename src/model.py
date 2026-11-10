@@ -14,8 +14,9 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import mean_absolute_error, mean_squared_error
-
-
+from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.tree import plot_tree
+from sklearn.model_selection import learning_curve
 # Data importation
 
 data =  pd.read_excel("C:\\Users\\Ulysse K\\cardio prediction\\data\\raw\\cardio.xlsx")
@@ -165,3 +166,24 @@ plt.title('Analyse du sur-apprentissage/sous-apprentissage')
 plt.legend()
 plt.grid()
 plt.show()
+
+# Learning curve analysis
+
+N, train_score, val_score = learning_curve(dtr, X_train, y_train, cv=2, train_sizes=np.linspace(0.2, 1.0))
+
+print("\n=== Analyse de la courbe d'apprentissage ===\n")
+print("Taille de l'entrainement : ", N)
+print("Scores d'entrainement : ", train_score)
+print("Scores de validation : ", val_score)
+
+plt.plot(N)
+plt.plot(N, train_score.mean(axis=1), label='Score entrainement')
+plt.plot(N, val_score.mean(axis=1), label='Score validation')
+plt.xlabel('Taille de l\'entrainement')
+plt.ylabel('Precision')
+plt.title('Courbe d\'apprentissage')
+plt.legend()
+plt.grid()
+plt.show()
+
+
